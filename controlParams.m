@@ -30,14 +30,14 @@ par.w_max = 7200;   % max / min propeller rotation rates, [rad/s]
 par.w_min = 0;
 
 %% INDI reduced att control
-par.chi = 105;          % output scheduling parameter, [deg].
+par.chi = 105; %105         % output scheduling parameter, [deg].
 par.pos_z_p_gain = 5;%5;   % altitude control pd gains
 par.pos_z_d_gain = 3;%3;
 par.axis_tilt = 0.0;    % primary axis tilting param, 0 ~ 0.2,  
                         % must be 0 for double rotor failure cases
 
-par.att_p_gain = 200;%200;   % attitude control pd gains 
-par.att_d_gain = 30;%30;
+par.att_p_gain = 200; %200;   % attitude control pd gains 
+par.att_d_gain = 30; %30;
 par.t_indi = 0.02;      % low-pass filter time constant, [s]
 
 % Yaw control
@@ -58,16 +58,13 @@ par.position_Kp_vel = [2.0, 2.0, 2.0];
 % par.mu2=0.8*1e-3*diag([1,1,1]);
 par.mu1=0.001*diag([1,1,1,1]);
 par.mu2=0.001*diag([1,1,1]);
-% par.mu1=diag([0,0,0,0]);
-% par.mu2=diag([0,0,0]);
 Iv = diag([par.Ix,par.Iy,par.Iz]);
 par.G1=1e-6*Iv\[-par.b*par.k0 par.b*par.k0 par.b*par.k0 -par.b*par.k0;par.l*par.k0 par.l*par.k0 -par.l*par.k0 -par.l*par.k0;par.t0 -par.t0 par.t0 -par.t0];
-par.G2=par.freq*Iv\[0 0 0 0;0 0 0 0;1 -1 1 -1];
+par.G2=par.freq*Iv\[0 0 0 0;0 0 0 0;0.5 -0.5 0.5 -0.5];
 %par.G2=1.9*1e-8*[0 0 0 0;0 0 0 0;1 -1 1 -1];
 par.zero13 =[0,0,0];
 par.G1_0=par.G1;
 par.G2_0=par.G2;
-par.I=0.1;
 
 % Altitude control
 

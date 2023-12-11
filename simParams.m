@@ -1,7 +1,7 @@
 %% Simulation parameters
 
 simVars.freq = 10000;        % simulation frequency
-simVars.aeroModel = 1;      % aerodynamic model 
+simVars.aeroModel = 0;      % aerodynamic model 
                             % 0 = simple aero model, 1 = complex model
 simVars.g = 9.8124;         % gravity in Delft
 simVars.pos0 = [0,0,0];     % initial position, [m]

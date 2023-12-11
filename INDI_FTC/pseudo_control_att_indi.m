@@ -49,6 +49,6 @@ nu3 =  - kd * dY(2) - kp*Y(2);
 nu4 =  - kpr* (r-r_ref);
 
 nu0 = [nu1; nu2; nu3; nu4];
-nu = [nu2;nu3;nu4];
+nu = (pi/180)*[nu2;nu3;nu4];
 
 end
